@@ -2,10 +2,34 @@
 
 class Program
 {
+    private static string StoryFileName;
+    private static string DictionaryFileName;
     static void Main(string[] args)
     {
         if (args.Length < 1)
-            Console.WriteLine("Usage: Cpsc370Final <arguments>");
+        {
+            Console.WriteLine("Using default story and dictionary.");
+            StoryFileName = "DefaultStory.txt";
+            DictionaryFileName = "DefaultWords.json";
+        }
+        else if (args.Length == 1)
+        {
+            Console.WriteLine("Using default dictionary.");
+            StoryFileName = args[0];
+            DictionaryFileName = "DefaultWords.json";
+        }
+        else if (args.Length == 2)
+        {
+            StoryFileName = args[0];
+            DictionaryFileName = args[1];
+        }
+        else
+        {
+            Console.WriteLine("Too many arguments. Using default story and dictionary.");
+            StoryFileName = "DefaultStory.txt";
+            DictionaryFileName = "DefaultWords.json";
+        }
+            
         
         // you can delete this if/when you like
         ShowArguments(args);
