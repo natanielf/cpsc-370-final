@@ -1,3 +1,5 @@
+using NuGet.Frameworks;
+
 namespace Cpsc370Final.Tests;
 
 public class UnitTest1
@@ -15,7 +17,8 @@ public class UnitTest1
     {
         StoryParser storyParser = new StoryParser("DefaultStory.txt");
         string[] storyArray = storyParser.ParseStoryFile();
-        string[] expectedStoryArray = ["This", " ", "is", " ", "the", " ", "default", " ", "story", ",", " ", "everybody", "."];
+        string[] expectedStoryArray =
+            ["This", " ", "is", " ", "the", " ", "default", " ", "story", ",", " ", "everybody", "."];
         Assert.NotNull(storyArray);
         Assert.Equal(expectedStoryArray, storyArray);
     }
@@ -25,8 +28,24 @@ public class UnitTest1
     {
         StoryParser storyParser = new StoryParser("Fake.txt");
         string[] storyArray = storyParser.ParseStoryFile();
-        string[] expectedStoryArray = ["This", " ", "is", " ", "the", " ", "default", " ", "story", ",", " ", "everybody", "."];
+        string[] expectedStoryArray =
+            ["This", " ", "is", " ", "the", " ", "default", " ", "story", ",", " ", "everybody", "."];
         Assert.NotNull(storyArray);
         Assert.Equal(expectedStoryArray, storyArray);
     }
+
+    [Theory]
+    [InlineData (new string[] {"I", " ", "am", " ", "PLACE"}, "I am PLACE")]
+    [InlineData (new string[] {"I", " ", "am", " ", "PERSON"}, "I am PERSON")]
+    [InlineData (new string[] {"I", " ", "am", " ", "EXCLAMATION"}, "I am EXCLAMATION")]
+    public void ReplaceStoryTemplate (string[] templateStory, string finalStory)
+    {
+        WordParser wordParser = new WordParser("DefaultWords.json");
+        WordDictionary wordDictionary = wordParser.GetWordDictionary();
+        MadLib madLib = new MadLib(templateStory, wordDictionary);
+        madLib.GenerateFinalStory();
+        string finalTestStory = madLib.GetFinalStory();
+        Assert.NotEqual(finalTestStory, finalStory);
+    }
+
 }
