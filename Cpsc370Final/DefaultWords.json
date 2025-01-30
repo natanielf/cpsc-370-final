@@ -1,5 +1,5 @@
 {
-"Persons": [
+"PERSON": [
     "Freddy Freak Bear", 
     "Foxy", 
     "Chica (the sexy chicken)", 
@@ -32,14 +32,14 @@
     "Shrek"
 ],
 
-"Places": [
+"PLACE": [
     "Ohio", 
     "Doofenshmirtz Evil Inc.", 
     "Shrek’s Swamp", 
     "the Backrooms"
 ],
 
-"Objects": [
+"OBJECT": [
     "piss pickles", 
     "kittens", 
     "fedora", 
@@ -65,7 +65,7 @@
     "tax evasion"
 ],
 
-"Verbs": [
+"VERB": [
     "rizz", 
     "dance", 
     "cook", 
@@ -81,7 +81,7 @@
     "gamble"
 ],
 
-"Adverbs": [
+"ADVERB": [
     "ferally", 
     "lovingly", 
     "slowly", 
@@ -95,7 +95,7 @@
     "ohio-ly"
 ],
 
-"Adjectives": [
+"ADJECTIVE": [
     "alpha", 
     "beta", 
     "massive", 
@@ -112,7 +112,7 @@
     "paranormal"
 ],
 
-"Exclamations": [
+"EXCLAMATION": [
     "Fuck", 
     "Shit", 
     "Bruh", 
