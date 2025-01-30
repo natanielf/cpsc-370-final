@@ -15,7 +15,7 @@ public class UnitTest1
     {
         StoryParser storyParser = new StoryParser("DefaultStory.txt");
         string[] storyArray = storyParser.ParseStoryFile();
-        string[] expectedStoryArray = ["This", " ", "is", " ", "the", " ", "default", " ", "story", ",", " ", "everybody", "."];
+        string[] expectedStoryArray = ["This", " ", "is", " ", "the", " ", "ADJECTIVE", " ", "story", ",", " ", "everybody", "."];
         Assert.NotNull(storyArray);
         Assert.Equal(expectedStoryArray, storyArray);
     }
@@ -25,7 +25,7 @@ public class UnitTest1
     {
         StoryParser storyParser = new StoryParser("Fake.txt");
         string[] storyArray = storyParser.ParseStoryFile();
-        string[] expectedStoryArray = ["This", " ", "is", " ", "the", " ", "default", " ", "story", ",", " ", "everybody", "."];
+        string[] expectedStoryArray = ["This", " ", "is", " ", "the", " ", "ADJECTIVE", " ", "story", ",", " ", "everybody", "."];
         Assert.NotNull(storyArray);
         Assert.Equal(expectedStoryArray, storyArray);
     }
