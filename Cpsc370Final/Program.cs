@@ -24,9 +24,10 @@ class Program
             Console.WriteLine("Too many arguments. Using default story and dictionary.");
         }
 
-        StoryParser sp = new StoryParser(StoryFileName);
-        
-        sp.ParseStoryFile();
+        StoryParser storyParser = new StoryParser(StoryFileName);
+        storyParser.ParseStoryFile();
+        WordParser wordParser = new WordParser(DictionaryFileName);
+        WordDictionary wordDictionary = wordParser.GetWordDictionary();
         
         // you can delete this if/when you like
         //ShowArguments(args);
