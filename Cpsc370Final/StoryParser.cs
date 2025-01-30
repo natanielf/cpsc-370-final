@@ -1,3 +1,5 @@
+using System.Text.RegularExpressions;
+
 namespace Cpsc370Final;
 
 public class StoryParser
@@ -13,8 +15,10 @@ public class StoryParser
     public string[] ParseStoryFile()
     { 
         string storyText = File.ReadAllText(_fileName);
+        string pattern = @"([ ,.!?])";
+
+        string[] storyArray = Regex.Split(storyText, pattern).Where(s => s.Length > 0).ToArray();
         
-        string[] storyArray = storyText.Split(" ");
 
         return storyArray;
     }
