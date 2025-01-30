@@ -24,4 +24,10 @@
       <ProjectReference Include="..\Cpsc370Final\Cpsc370Final.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Include="..\Cpsc370Final\DefaultWords.json">
+        <Link>DefaultWords.json</Link>
+      </Content>
+    </ItemGroup>
+
 </Project>
