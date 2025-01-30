@@ -6,7 +6,7 @@ public class UnitTest1
     public void ParseDefaultWordDictionaryJsonFile()
     {
         WordParser wordParser = new WordParser();
-        WordDictionary wordDictionary = wordParser.GetWordDictionary();
+        Dictionary<string, List<string>> wordDictionary = wordParser.GetWordDictionary();
         Assert.NotNull(wordDictionary);
     }
 }

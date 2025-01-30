@@ -9,10 +9,6 @@ public class WordParser
 
     public WordParser(string fileName = DefaultJsonFileName)
     {
-        if (!File.Exists(fileName))
-        {
-            throw new FileNotFoundException($"File {fileName} not found");
-        }
         string json = File.ReadAllText(fileName);
         _dictionary = JsonSerializer.Deserialize<WordDictionary>(json);
     }
