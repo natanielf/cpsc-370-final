@@ -25,9 +25,15 @@ class Program
         }
 
         StoryParser storyParser = new StoryParser(StoryFileName);
-        storyParser.ParseStoryFile();
+        string[] storyTemplate = storyParser.ParseStoryFile();
         WordParser wordParser = new WordParser(DictionaryFileName);
         WordDictionary wordDictionary = wordParser.GetWordDictionary();
+
+        MadLib madLib = new MadLib(storyTemplate, wordDictionary);
+        madLib.GenerateFinalStory(); 
+        string story = madLib.GetFinalStory();
+
+        Console.WriteLine(story);
 
         // you can delete this if/when you like
         //ShowArguments(args);
