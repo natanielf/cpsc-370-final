@@ -33,8 +33,11 @@ class Program
         MadLib madLib = new MadLib(storyTemplate, wordDictionary);
         madLib.GenerateFinalStory(); 
         string story = madLib.GetFinalStory();
+        
+        WriteStoryToFile(story, "MadLib.txt");
 
-        Console.WriteLine(story);
+        //Console.WriteLine(story);
+        
 
         // you can delete this if/when you like
         //ShowArguments(args);
@@ -42,6 +45,12 @@ class Program
 
     // this is just an example of how to get the command
     // line arguments so you can use them
+    
+    private static void WriteStoryToFile(string story, string fileName)
+    {
+        File.WriteAllText(fileName, story);
+        Console.WriteLine("Story was written to " + fileName);
+    }
     private static void ShowArguments(string[] args)
     {
         for (int i = 0; i < args.Length; i++)
@@ -49,4 +58,6 @@ class Program
             Console.WriteLine("  Argument " + i +": " + args[i]);
         }
     }
+    
+    
 }
