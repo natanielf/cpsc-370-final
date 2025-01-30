@@ -1,3 +1,5 @@
+using NuGet.Frameworks;
+
 namespace Cpsc370Final.Tests;
 
 public class UnitTest1
@@ -29,4 +31,19 @@ public class UnitTest1
         Assert.NotNull(storyArray);
         Assert.Equal(expectedStoryArray, storyArray);
     }
+
+    [Theory]
+    [InlineData (new string[] {"I", " ", "am", " ", "PLACE"}, "I am PLACE")]
+    [InlineData (new string[] {"I", " ", "am", " ", "PERSON"}, "I am PERSON")]
+    [InlineData (new string[] {"I", " ", "am", " ", "EXCLAMATION"}, "I am EXCLAMATION")]
+    public void ReplaceStoryTemplate (string[] templateStory, string finalStory)
+    {
+        WordParser wordParser = new WordParser("DefaultWords.json");
+        WordDictionary wordDictionary = wordParser.GetWordDictionary();
+        MadLib madLib = new MadLib(templateStory, wordDictionary);
+        madLib.GenerateFinalStory();
+        string finalTestStory = madLib.GetFinalStory();
+        Assert.NotEqual(finalTestStory, finalStory);
+    }
+
 }
