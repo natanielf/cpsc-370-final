@@ -15,7 +15,7 @@ public class StoryParser
     public string[] ParseStoryFile()
     { 
         string storyText = File.ReadAllText(_fileName);
-        string pattern = @"([ ,.!?\""\n|ing|ed])";
+        string pattern = @"([ ,.!?\""\n]|(?:ing)|(?:ed))";
 
         string[] storyArray = Regex.Split(storyText, pattern).Where(s => s.Length > 0).ToArray();
         
