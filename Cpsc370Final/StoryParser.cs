@@ -7,23 +7,25 @@ public class StoryParser
     //constructor given a file name
     public StoryParser(string fileName)
     {
-        _fileName = fileName;
+        _fileName = OpenStoryFile(fileName);
     }
     
     public string[] ParseStoryFile()
-    {
-        //read the file and save it all to a string
+    { 
         string storyText = File.ReadAllText(_fileName);
         
-        //split the string into an array of strings
         string[] storyArray = storyText.Split(" ");
-        
-        for (int i = 0; i < storyArray.Length; i++)
-        {
-            Console.WriteLine(storyArray[i]);
-        }
+
         return storyArray;
     }
-    
-    
+
+    private string OpenStoryFile(string fileName)
+    {
+        if (!File.Exists(fileName))
+        {
+            return "DefaultStory.txt";
+        }
+        
+        return fileName;
+    }
 }
