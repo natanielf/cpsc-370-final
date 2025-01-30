@@ -9,4 +9,10 @@ public class UnitTest1
         WordDictionary wordDictionary = wordParser.GetWordDictionary();
         Assert.NotNull(wordDictionary);
     }
+
+    [Fact]
+    public void CheckGetFinalStory()
+    {
+        
+    }
 }
