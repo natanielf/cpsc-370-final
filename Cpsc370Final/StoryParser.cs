@@ -4,19 +4,28 @@ public class StoryParser
 {
     private string _fileName;
 
-    private List<string> _story;
     //constructor given a file name
     public StoryParser(string fileName)
     {
-        _fileName = fileName;
-        _story = new List<string>();
+        _fileName = OpenStoryFile(fileName);
+    }
+    
+    public string[] ParseStoryFile()
+    { 
+        string storyText = File.ReadAllText(_fileName);
+        
+        string[] storyArray = storyText.Split(" ");
+
+        return storyArray;
     }
 
-    
-    public List<string> ParseStoryFile()
+    private string OpenStoryFile(string fileName)
     {
-        List<string> parsedStory = new List<string>();
-
-        return parsedStory;
+        if (!File.Exists(fileName))
+        {
+            return "DefaultStory.txt";
+        }
+        
+        return fileName;
     }
 }
