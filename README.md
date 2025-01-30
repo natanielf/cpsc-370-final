@@ -10,8 +10,16 @@ dotnet build
 
 ## Run
 
+To use the default story and word dictionary, run:
+
 ```sh
 dotnet run
+```
+
+To use a custom story file and word dictionary, run:
+
+```sh
+dotnet run -- [StoryFile.txt] [WordDictionary.json]
 ```
 
 ## Authors
