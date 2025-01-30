@@ -1,4 +1,4 @@
-﻿namespace Cpsc370Final;
+namespace Cpsc370Final;
 class Program
 {
     private static string StoryFileName = "DefaultStory.txt";
@@ -23,6 +23,7 @@ class Program
         {
             Console.WriteLine("Too many arguments. Using default story and dictionary.");
         }
+
 
         StoryParser storyParser = new StoryParser(StoryFileName);
         string[] storyTemplate = storyParser.ParseStoryFile();
