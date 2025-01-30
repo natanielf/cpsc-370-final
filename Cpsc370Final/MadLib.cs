@@ -28,7 +28,7 @@ public class MadLib
         string story = "";
         foreach (string word in _finalStoryWords)
         {
-            story += word + " ";
+            story += word;
         }
         story = story.Trim();
         return story;
