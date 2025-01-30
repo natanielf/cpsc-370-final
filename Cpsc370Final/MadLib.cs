@@ -3,10 +3,10 @@ namespace Cpsc370Final;
 public class MadLib
 {
     private Dictionary<string, List<string>> _wordDictionary = new Dictionary<string, List<string>>(); 
-    private List<string> _finalStory = new List<string>(); 
-    private List<string> _templateStory = new List<string>();
+    private List<string> _finalStory; 
+    private string[] _templateStory;
 
-    public void SetTemplateStory(List<string> template)
+    public void SetTemplateStory(string[] template)
     {
         _templateStory = template;
     }
